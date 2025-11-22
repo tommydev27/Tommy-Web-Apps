@@ -159,8 +159,8 @@ textarea {
 }
 
 
-.block { display: none; }
 .block.active { display: block; }
+.block { display: none; }
 
 .nav-wrap {
   display: flex;
@@ -1498,7 +1498,7 @@ saveBtn.addEventListener("click", saveImage);
 
 <!-- NAVIGASI -->
 <div class="nav-wrap">
-  <button class="nav-btn active" data-target="block-karakter">
+  <button class="nav-btn" data-target="block-karakter">
     <i class="fas fa-table"></i><small>Tools</small>
   </button>
   <button class="nav-btn" data-target="block-galeri">
@@ -1513,7 +1513,7 @@ saveBtn.addEventListener("click", saveImage);
   <button class="nav-btn" data-target="block-emoji">
     <i class="fas fa-images"></i><small>Create Img</small>
   </button>
-  <button class="nav-btn" data-target="block-image">
+  <button class="nav-btn active" data-target="block-image">
     <i class="fas fa-home"></i><small>Home</small>
   </button>
 </div>
@@ -1554,6 +1554,21 @@ const buttons = document.querySelectorAll('.nav-btn');
 const sections = document.querySelectorAll('.block');
 const loadingOverlay = document.getElementById('loading-overlay');
 
+// INISIALISASI HALAMAN AWAL
+(function init() {
+  // Hilangkan semua active
+  buttons.forEach(b => b.classList.remove('active'));
+  sections.forEach(s => s.classList.remove('active'));
+
+  // Set Home sebagai default
+  const homeBtn = document.querySelector('[data-target="block-image"]');
+  const homeSection = document.getElementById('block-image');
+
+  if (homeBtn) homeBtn.classList.add('active');
+  if (homeSection) homeSection.classList.add('active');
+})();
+
+// EVENT LISTENER NAVIGASI
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     buttons.forEach(b => b.classList.remove('active'));
@@ -1566,7 +1581,7 @@ buttons.forEach(btn => {
       loadingOverlay.style.display = 'flex';
     }, 300);
 
-    const waktuMuat = Math.random() * 1000; 
+    const waktuMuat = Math.random() * 1000;
 
     setTimeout(() => {
       clearTimeout(showLoading);
