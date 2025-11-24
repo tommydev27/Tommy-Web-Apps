@@ -33,10 +33,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
 
 <!-- Styles -->
-<link rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v5/y2/l/0,cross/nC2XYYUISfm.css" crossorigin="anonymous">
-<link rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v5/y8/l/0,cross/Z39OoPuXzgz.css" crossorigin="anonymous">
-<link rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v5/yT/l/0,cross/RYoQlJMNiM3.css" crossorigin="anonymous">
-<link rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v5/yv/l/0,cross/VraZqV-tU8r.css" crossorigin="anonymous">
+
+<link href="https://static.xx.fbcdn.net/rsrc.php/v5/y2/l/0,cross/qVai514D-Du.css" rel="stylesheet" crossorigin="anonymous"><link href="https://static.xx.fbcdn.net/rsrc.php/v5/yk/l/0,cross/r5J_VEmEoGr.css" rel="stylesheet" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="style.css?v=2">
 
@@ -1045,7 +1043,7 @@ document.getElementById("unicodeBadge").addEventListener("click", () => {
     display: none;
     border: 5px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 5px solid #03b90a;
+    border-top: 5px solid #679afd;
     width: 25px;
     height: 25px;
     margin: 20px auto;
@@ -1307,27 +1305,35 @@ Design • Tommy V0.1.0 ⋯
           "
           placeholder="Tulis deskripsi kreatif Anda di sini..."></textarea>
           </div><div class="unique-image-container">  <h3 style=" font-size: 15px; color: #777; font-size: 16px; margin-top: -8px; font-family: Questrial;">
-          Image displayed <i style="margin-left: 0px; font-size: 14px; color: #028e33f9;" class="fab fa-slack"></i>
+          Image displayed <i style="margin-left: 0px; font-size: 14px; color: #4b9bf4f9;" class="fab fa-slack"></i>
           </h3><img id="uniqueGeneratedImage" class="unique-generated-image" alt="">
-<div id="loader" class="loader"></div>
-<div class="scroll-container"></div>
+      <div id="loader" class="loader"></div>
+      <div class="scroll-container"></div>
           <div id="downloadTextContainer" style="display: none; text-align: center; font-size: 14px; font-weight: bold; color: #333; margin-top: 10px;"></div>
+          
+        <button  id="uniqueSaveBtn" style="display:none; background:rgb(81,85,91); color:#fff; padding:10px; border-radius:5px; border:none; margin-bottom:5px;">Download</button>
+
           <div><select id="uniqueHeightInput" class="unique-height-input" 
         style="font-size: 15px; padding: 5px; border-radius: 8px; font-weight: bold; color: #777;">
-  <option value="200">200Px sampul</option>
-  <option value="300">300Px sampul</option>
-  <option value="400">400Px</option>
-  <option value="500">500Px (Persegi)</option>
-  <option value="600">600Px</option>
-  <option value="700">700Px</option>
-  <option value="800">800Px</option>
-</select><button id="uniqueGenerateBtn" class="unique-generate-btn"
+        <option value="200">200Px sampul</option>
+        <option value="300">300Px sampul</option>
+        <option value="400">400Px</option>
+        <option value="500">500Px (Persegi)</option>
+        <option value="600">600Px</option>
+        <option value="700">700Px</option>
+        <option value="800">800Px</option>
+      </select>
+
+      <button id="uniqueGenerateBtn" class="unique-generate-btn"
           style="color: #fff; border: none; border-radius: 8px; font-size: 14px; padding: 8px; cursor: pointer; margin-top: 0px; font-weight: bold; margin-left: 10px; background:#82a6ec;">Generate <i style="margin-left: 5px; font-size: 15px; color: #ffd;" class="fas fa-sync"></i></button></div><div id="preset-images" style="margin-top: 10px;"><h3 style="color: #777; font-size: 15px; margin-bottom: 10px; font-family:Questrial;">
           Gambar Preset klik untuk buat ⇆ Scrollbar
           </h3></div><div class="image-slider-container"><div class="image-slider">
-          <img src="https://i.postimg.cc/9XJM71Mz/download-2-25.jpg"
+          <img src="https://i.postimg.cc/GmYyyysx/generated-image-png-(2).jpg"
           alt="Gambar 1" class="slider-image"
-          data-prompt="A menacing male anime character with messy white hair and glowing red eyes, his mouth a stitched, grinning skull pattern. He is shirtless, covered in intricate black tattoos, with a large white skull emblem on his stomach. He wears a black open jacket and black pants held up by a belt with silver chains. He is holding a katana sword over his shoulder. The background is a dark, futuristic cityscape with surreal, glowing skull-like structures."><img src="https://i.postimg.cc/LsDKfjT8/download-2-26.jpg" alt="Gambar 4" class="slider-image" data-prompt="A stylish male anime character wearing a black hoodie with the hood up and a black face mask, obscuring most of his face. He has intricate tattoos on both arms and a red beaded necklace with a pendant. He is wearing a black t-shirt with a red tribal design and a black jacket over it, along with black pants with a white drawstring and side pockets. Two fierce white tigers with blue eyes are perched on his shoulders. The background is a neon-lit futuristic city street at night, with glowing Japanese signs.">
+          data-prompt="A logo in white, lime green, and grey on a black background, featuring the word GEMBEL in a distressed, bold font. Below it, in a smaller, sleeker font, are the words ELITE on the left and TM DESIGN on the right. The logo has a dynamic, angular design with geometric shapes and lines radiating from the text, giving it a modern, racing, or sports-oriented feel.">
+          <img src="https://i.postimg.cc/bJXSg0Kv/generated-image-png-(5).jpg"
+          alt="Gambar 1" class="slider-image"
+          data-prompt="Create a bold racing-style typography design featuring the text PEMUDA ERTE 25. Use sharp, angular, italicized lettering with a dynamic and sporty look. Incorporate vibrant colors such as bright blue, neon yellow, and white, outlined with black for strong contrast. Add graphic elements like speedlines, arrows, geometric shapes, and layered stripes to enhance the high-speed racing aesthetic. Use a solid black background to make the colors pop. Overall style should feel modern, energetic, and aggressive, similar to motorcycle decal graphics"><img src="https://i.postimg.cc/LsDKfjT8/download-2-26.jpg" alt="Gambar 4" class="slider-image" data-prompt="A stylish male anime character wearing a black hoodie with the hood up and a black face mask, obscuring most of his face. He has intricate tattoos on both arms and a red beaded necklace with a pendant. He is wearing a black t-shirt with a red tribal design and a black jacket over it, along with black pants with a white drawstring and side pockets. Two fierce white tigers with blue eyes are perched on his shoulders. The background is a neon-lit futuristic city street at night, with glowing Japanese signs.">
           <img src="https://i.postimg.cc/Gp1KyQn5/download-2-27.jpg" alt="Gambar 5" class="slider-image" data-prompt="A male anime character, resembling Kakashi Hatake, with spiky white hair and a black face mask, holding a white and red Kitsune mask. He wears a white jacket with red accents and intricate red rope details, along with a black headband and black gloves. His outfit includes white pants, and there are additional red and black elements around his waist and arms. The background features chaotic, broken structures with white, gray, and splashes of vibrant red, creating a dynamic, artistic setting.">
           <img src="https://i.postimg.cc/Qt8MBnCN/download-2-28.jpg" alt="Gambar 5" class="slider-image" data-prompt="A dynamic, vertical, full-body shot of Goku from Dragon Ball in his Ultra Instinct form. His hair glows with an intense white-blue aura. His upper body is muscular, and he wears a tattered blue gi and red wristbands. His body is surrounded by a powerful, multi-colored aura of blue, purple, and red, with glowing particles and streaks of light. His face is serene and focused, with his eyes appearing silver. The background is a dark void with bright blue energy streaks.">
 
@@ -1405,18 +1411,22 @@ const saveBtn = document.getElementById("uniqueSaveBtn");
 const heightInput = document.getElementById("uniqueHeightInput");
 const generateBtn = document.getElementById("uniqueGenerateBtn");
 
+// =======================
+// GENERATE IMAGE FUNCTION
+// =======================
 function generateImage(description = null) {
   const prompt = description || promptInput.value.trim();
   const selected = parseInt(heightInput.value) || 500;
 
-  const width = 500;       // lebar selalu fix 500
-  const height = selected; // tinggi ikut pilihan
+  const width = 500;       // Lebar tetap 500
+  const height = selected; // Tinggi mengikuti input
 
   if (!prompt) {
     alert("Please enter a description for the image.");
     return;
   }
 
+  // Munculkan animasi loading
   loader.style.display = 'block';
   setTimeout(() => {
     loader.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1429,23 +1439,29 @@ function generateImage(description = null) {
   generatedImage.src = generateImageUrl;
 
 
-  // ... lanjut sama seperti kode Anda
-
-
-
+  // =========================
+  // SAAT GAMBAR SUDAH DI LOAD
+  // =========================
   generatedImage.onload = () => {
     loader.style.display = 'none';
+
+    // ---- TAMPILKAN TOMBOL DOWNLOAD ----
+    saveBtn.style.display = "block";
     saveBtn.disabled = false;
-    generatedImage.setAttribute("onclick", "saveImage()");
+
+    // ---- GAMBAR BISA DIKLIK UNTUK DOWNLOAD ----
+    generatedImage.onclick = saveImage;
     generatedImage.style.cursor = "pointer";
 
+    // ---- TAMBAH TEKS PETUNJUK ----
     let downloadText = document.getElementById("downloadText");
     if (!downloadText) {
       downloadText = document.createElement("p");
       downloadText.id = "downloadText";
       generatedImage.parentNode.insertBefore(downloadText, generatedImage.nextSibling);
     }
-    downloadText.textContent = " Tekan gambar 2 detik klik Download Gambar";
+
+    downloadText.textContent = "Klik gambar atau tombol Download untuk menyimpan";
     downloadText.style.textAlign = "center";
     downloadText.style.fontSize = "14px";
     downloadText.style.fontWeight = "bold";
@@ -1460,22 +1476,50 @@ function generateImage(description = null) {
   };
 }
 
+
+// =======================
+// DOWNLOAD IMAGE FUNCTION
+// =======================
 function saveImage() {
-  const link = document.createElement('a');
-  link.href = generatedImage.src;
-  link.download = 'generated_image.png';
-  link.click();
+  fetch(generatedImage.src, {
+    mode: "cors"
+  })
+    .then(response => response.blob())
+    .then(blob => {
+      const blobUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = "generated_image.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(blobUrl);
+    })
+    .catch(err => {
+      console.error("Download error:", err);
+      alert("Gagal menyimpan gambar. Coba lagi.");
+    });
 }
 
+
+
+// =======================
+// SLIDER IMAGE CLICK EVENT
+// =======================
 sliderImages.forEach(image => {
   image.addEventListener("click", function () {
     const prompt = this.getAttribute("data-prompt");
     promptInput.value = prompt;
     generateImage(prompt);
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
 
+
+// =======================
+// BUTTON EVENTS
+// =======================
 generateBtn.addEventListener("click", () => generateImage());
 saveBtn.addEventListener("click", saveImage);
 </script>
