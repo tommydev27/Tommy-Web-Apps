@@ -1563,17 +1563,16 @@ saveBtn.addEventListener("click", saveImage);
 <!-- NAVIGASI -->
 <div class="nav-wrap">
   
-  <button class="nav-btn active" data-target="block-image">
+
+
+  <button class="nav-btn active" data-target="block-glitch">
+    <i class="fas fa-keyboard"></i><small>Keyboard</small>
+  </button>
+  <button class="nav-btn" data-target="block-image">
     <i class="fas fa-home"></i><small>Home</small>
   </button>
   <button class="nav-btn" data-target="block-emoji">
     <i class="fas fa-images"></i><small>Create Img</small>
-  </button>
-  <button class="nav-btn" data-target="block-glitch">
-    <i class="fas fa-keyboard"></i><small>Keyboard</small>
-  </button>
-  <button class="nav-btn" data-target="block-karakter">
-    <i class="fas fa-table"></i><small>Tools</small>
   </button>
   <button class="nav-btn" data-target="block-galeri">
     <i class="fas fa-play"></i><small>Code Run</small>
@@ -1581,7 +1580,9 @@ saveBtn.addEventListener("click", saveImage);
   <button class="nav-btn" data-target="block-keyboard">
     <i class="fas fa-spider"></i><small>Font</small>
   </button>
-
+  <button class="nav-btn" data-target="block-karakter">
+    <i class="fas fa-table"></i><small>Tools</small>
+  </button>
 </div>
 
 <!-- LOADING -->
@@ -1627,8 +1628,8 @@ const loadingOverlay = document.getElementById('loading-overlay');
   sections.forEach(s => s.classList.remove('active'));
 
   // Set Home sebagai default
-  const homeBtn = document.querySelector('[data-target="block-image"]');
-  const homeSection = document.getElementById('block-image');
+  const homeBtn = document.querySelector('[data-target="block-glitch"]');
+  const homeSection = document.getElementById('block-glitch');
 
   if (homeBtn) homeBtn.classList.add('active');
   if (homeSection) homeSection.classList.add('active');
