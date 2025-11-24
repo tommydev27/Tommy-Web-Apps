@@ -821,6 +821,13 @@ document.getElementById("unicodeBadge").addEventListener("click", () => {
       background: #e8eefc;
       cursor: pointer;
     }
+.kc-loader {
+  text-align: center;
+  font-size: 20px;
+  color: #0d8103;
+  padding: 10px;
+  font-weight: bold;
+}
 
   </style>
 <div class="kc-app">
@@ -857,6 +864,7 @@ document.getElementById("unicodeBadge").addEventListener("click", () => {
   const info = $('kc-outputInfo');
   const limitInput = $('kc-limit');
   const clearBtn = $('kc-clear');
+  const loader = document.createElement('div'); // Elemen loader
 
   function parseHighCodes(text){
     return text
@@ -881,30 +889,42 @@ document.getElementById("unicodeBadge").addEventListener("click", () => {
 
   function showCharacters(codeList){
     grid.innerHTML = '';
+    info.textContent = 'Memproses...';
+
+    // Menambahkan elemen loader ke grid
+    loader.textContent = 'Loading...';
+    loader.className = 'kc-loader';
+    grid.appendChild(loader);
+
     if(!codeList.length){ 
       info.textContent = 'Tidak ada kode valid.'; 
+      loader.remove();  // Menghapus loader setelah selesai
       return; 
     }
     const limit = Math.max(0, Number(limitInput.value) || 0);
     info.textContent = `Menampilkan ${codeList.length} kode.`;
 
-    codeList.forEach(code => {
-      if(code >= 0xD800 && code <= 0xDBFF){
-        const lowStart = 0xDC00;
-        const lowEnd = 0xDFFF;
-        const total = lowEnd - lowStart + 1;
-        const count = limit === 0 ? total : Math.min(limit, total);
-        for(let i=0;i<count;i++){
-          const low = lowStart + i;
-          const ch = String.fromCharCode(code, low);
-          buatCard(ch, code, low);
+    setTimeout(() => {
+      codeList.forEach(code => {
+        if(code >= 0xD800 && code <= 0xDBFF){
+          const lowStart = 0xDC00;
+          const lowEnd = 0xDFFF;
+          const total = lowEnd - lowStart + 1;
+          const count = limit === 0 ? total : Math.min(limit, total);
+          for(let i=0;i<count;i++){
+            const low = lowStart + i;
+            const ch = String.fromCharCode(code, low);
+            buatCard(ch, code, low);
+          }
+        } else {
+          const ch = String.fromCodePoint(code);
+          buatCard(ch, code);
         }
-      } else {
-        const ch = String.fromCodePoint(code);
-        buatCard(ch, code);
-      }
-    });
-    if(grid.firstChild) grid.firstChild.scrollIntoView({behavior:'smooth'});
+      });
+
+      loader.remove();  // Menghapus loader setelah selesai menampilkan karakter
+      if(grid.firstChild) grid.firstChild.scrollIntoView({behavior:'smooth'});
+    }, 500); // Memberikan delay untuk menampilkan loader (500ms)
   }
 
   function buatCard(ch, high, low){
