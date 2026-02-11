@@ -8,12 +8,13 @@
 <meta name="google-site-verification" content="pwKvYalfLxSFwpDlCsan4yS_mEsUdJvUDrI2wKiIHXk">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Tommy Web Apps">
-<meta property="og:description" content="Application was independently developed by Tommy (version 0.27).">
-<meta property="og:image" content="https://i.postimg.cc/c6qBY9SW/snapedit-1762165920917.jpg">
-<meta property="og:url" content="https://tommydev27.github.io/Tommy-Web-Apps/">
-<meta property="og:type" content="website">
-<meta property="fb:app_id" content="1245016886587008">
+    <meta property="og:title" content="Tommy Website">
+    <meta property="og:description" content="web-tools">
+    <meta property="og:image" content="https://i.postimg.cc/W4vQVb2g/icon.jpg">
+    <meta property="og:url" content="https://tommydev27.github.io/UnicodeTM/">
+    <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="1245016886587008">
+    
 
 <title>Tommy Web Apps</title>
 
@@ -21,10 +22,10 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icon-512.png">
-<link rel="icon" href="https://i.postimg.cc/tT42rd92/icon-192.png" type="image/png">
-<link rel="apple-touch-icon" href="https://i.postimg.cc/tT42rd92/icon-192.png" type="image/png">
+<link rel="icon" href="https://i.postimg.cc/W4vQVb2g/icon.jpg" type="image/png">
+<link rel="apple-touch-icon" href="https://i.postimg.cc/W4vQVb2g/icon.jpg" type="image/png">
 
-<link rel="preload" href="https://i.postimg.cc/tT42rd92/icon-192.png" as="image">
+<link rel="preload" href="https://i.postimg.cc/W4vQVb2g/icon.jpg" as="image">
 <!-- PWA Settings -->
 <meta name="theme-color" content="#f9f9f9">
 <meta name="mobile-web-app-capable" content="yes">
@@ -53,7 +54,7 @@
   <style>
     html {
       height: 100%;
-      background-color: #f9f9f9;
+
       box-sizing: border-box;
     }
     body {
@@ -63,11 +64,9 @@
     body {
       margin: 0;
       font-family: Questrial;
-      background-color: #f9f9f9;
-      padding-top: 60px;
+      padding-top: 50px;
       padding-bottom: 60px;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
+
     }
 
 /* HEADER */
@@ -77,11 +76,10 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  background: #fff;
-  border-bottom: 5px solid #ddd;
+background-color: #ced6de;
   display: flex;
   align-items: center;
-  padding: 5px 20px;
+  padding: 3px 20px;
 }
 
 body.dark .header-fixed {
@@ -170,11 +168,11 @@ textarea {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #fff;
-  padding: 8px 0;
-  border-top: 1px solid #ddd;
+  background-color: #ced6de;
+  padding: 5px 0;
 }
 
+  
 body.dark .nav-wrap,
 body.dark .nav-btn {
   background: #333;
@@ -194,7 +192,7 @@ body.dark .nav-btn:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #65676b;
+  color: #607e86;
   background: none;
   border: none;
   text-align: center;
@@ -211,11 +209,20 @@ body.dark .nav-btn:active {
   color: #007bff;
 }
 
-.nav-btn.active { color: #1877f2; }
+.nav-btn {
+    -webkit-tap-highlight-color: transparent; /* Hilangkan efek klik */
+    outline: none;                            /* Hilangkan garis fokus */
+}
+
+.nav-btn i { 
+    display: block; 
+    font-size: 20px; 
+}
+
+.nav-btn.active { color: #375962; }
+.nav-btn:active { color: red; opacity: 0.5; transform: scale(1.1); }
 .nav-btn i { display: block; font-size: 20px; }
 .nav-btn small { display: block; font-size: 10px; margin-top: 2px; }
-
-
 /* MODE GELAP */
 body.dark {
   background: #000;
@@ -427,37 +434,11 @@ if ('serviceWorker' in navigator) {
   }
 
   #splash .logo .main-text {
-    font-size:13px;
-    font-family: Questrial;
-    font-weight:500;
+    font-size:3.8vw;
     position:relative;
     color:#949ea7;
   }
 
-  #splash .logo .main-text .underline {
-    position:absolute;
-    bottom:0;
-    left:0px;
-    width:calc(100% + 1px);
-    border-bottom:0.5px solid #444;
-    margin-bottom:-2px;
-  }
-
-  #splash .logo .sub-text {
-    font-size:10px;
-    font-family: Questrial;
-    display:inline-block;
-    color:#333;
-    margin-top:8px;
-  }
-
-  #splash .logo .sub-text .tm {
-    display:inline-block;
-    font-size:14.5px;
-    font-family: Questrial;
-    color:#4790fb;
-    text-shadow:0.2px 0 0 currentColor, -0.5px 0 0 currentColor;
-  }
 
   @keyframes logoIn {
     to { opacity:1; transform: scale(1); }
@@ -465,18 +446,18 @@ if ('serviceWorker' in navigator) {
 
   /* Loading bar */
   .loading-bar {
-    width: 108px;
-    height: 5px;
+    width: 37vw;
+    height: 1vw;
     background: #ccc;
-    border-radius: 50px;
+    border-radius: 5vw;
     overflow: hidden;
-    margin-top:10px;
+    margin-top:3vw;
   }
 
   .loading-bar-inner {
     width:0;
     height:100%;
-    background:#8396e2;
+    background:#738cef;
     animation: load 3s forwards;
   }
 
@@ -494,16 +475,37 @@ if ('serviceWorker' in navigator) {
     display:none;
   }
 </style>
+<style>
+  /* Animasi Warna Pelangi Bergerak */
+  @keyframes rainbowMove {
+    to { background-position: 300% center; }
+  }
 
+  /* Animasi Muncul Perlahan & Membesar */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
 <div id="splash">
   <div class="logo">
-    <div class="main-text" style="font-family:Questrial;">
-      TOMMY WEB-APP
-      <div class="underline"></div>
-    </div>
-<div class="sub-text">
-  from
-  <span class="tm" style="margin-left:4px;"><i class="fab fa-gg"></i> Unicreate</span>
+<div class="main-text" style="
+    font-family: Orbitron; 
+    font-weight: bold; 
+    background: linear-gradient(to right,#7a9af8, #1f5960, red);
+    background-size: 200% auto;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    animation: rainbowMove 3s linear infinite, fadeInUp 1.2s ease-out forwards;
+">
+  ★ TOMMY + ⛾ = <⧸>
+  <div class="underline"></div>
 </div>
 
   </div>
@@ -511,20 +513,41 @@ if ('serviceWorker' in navigator) {
   <div class="loading-bar">
     <div class="loading-bar-inner"></div>
   </div>
-</div>
 
+<div style="
+      font-family: sans-serif;
+      font-size: 2.9vw;
+      color: #777;
+      margin-top: 10vw;
+
+      opacity: 0.7;
+  ">
+    web-tools | by tommy v2.7.0
+  </div>
+  </div>
 <div id="main">
 </div>
 
 <script>
-  setTimeout(() => {
-    const splash = document.getElementById('splash');
-    splash.classList.add('fade-out');
+  const splash = document.getElementById('splash');
+  const mainContent = document.getElementById('main');
+
+  // Cek apakah user sudah melihat splash di sesi ini
+  if (sessionStorage.getItem('splashPlayed')) {
+    splash.style.display = 'none';
+    mainContent.style.display = 'block';
+  } else {
+    // Jika belum pernah, jalankan animasi
     setTimeout(() => {
-      splash.style.display = 'none';
-      document.getElementById('main').style.display = 'block';
-    }, 800);
-  }, 3000);
+      splash.classList.add('fade-out');
+      setTimeout(() => {
+        splash.style.display = 'none';
+        mainContent.style.display = 'block';
+        // Simpan status agar tidak muncul lagi saat kembali ke menu
+        sessionStorage.setItem('splashPlayed', 'true');
+      }, 800); // Sesuaikan dengan durasi transisi fade-out Anda
+    }, 3000);
+  }
 </script>
 
 
@@ -532,20 +555,20 @@ if ('serviceWorker' in navigator) {
   <div class="header-fixed">
 <div class="tommy" style="padding: 0px 0px; font-family: normal;">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<user style="display:inline-block; font-size:12px;  font-weight:900; letter-spacing:1.3px; margin:0; line-height:1.2; position:relative;">
-  <user style="display:inline-block; transform: scaleX(1.1) scaleY(0.8); transform-origin:center;">Tommy web-app </user>
-  <user style="position:absolute; bottom:0; left:-5px; width:calc(100% + 0px); border-bottom:0.5px solid #444;"></usee>
+<user style="display:inline-block; font-size:12px;  font-weight:700; letter-spacing:0.5px; margin:0; line-height:1.2; position:relative;">
+  <user style="display:inline-block; transform: scaleX(1.1) scaleY(0.8); transform-origin:center; margin-top:7px;">Tommy Adhelyno</user>
+  <user style="position:absolute; left:-5px; width:calc(100% + 0px); bottom:-6px; border: solid 0.5px  #ccc;">
 </user>
 
-&nbsp; <svg xmlns="http://www.w3.org/2000/svg" fill="#4790fb" width="15" height="15" viewBox="0 0 30 30" style="transform: translateY(5px);"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.201 1.122a1 1 0 0 1 1.332.357l1.307 2.138 2.506.063a1 1 0 0 1 .974.975l.063 2.505 2.139 1.307a1 1 0 0 1 .356 1.332L21.68 12l1.198 2.201a1 1 0 0 1-.357 1.332l-2.138 1.307-.063 2.506a1 1 0 0 1-.974.974l-2.506.063-1.307 2.139a1 1 0 0 1-1.332.356L12 21.68l-2.201 1.198a1 1 0 0 1-1.332-.357L7.16 20.383l-2.506-.063a1 1 0 0 1-.974-.974l-.063-2.506-2.138-1.307a1 1 0 0 1-.357-1.332L2.32 12 1.122 9.799a1 1 0 0 1 .357-1.332L3.617 7.16l.063-2.505a1 1 0 0 1 .974-.975l2.506-.063L8.467 1.48A1 1 0 0 1 9.8 1.122L12 2.32l2.201-1.198zm2.44 9.146a1 1 0 1 0-1.281-1.536l-.067.055a43.003 43.003 0 0 0-4.852 4.74l-1.734-1.734a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.475-.067l.056-.067a41 41 0 0 1 5.25-5.25l.066-.055z"></path></svg></user><p style="margin:4px 0 0 0; line-height:1.2;"><user style="font-size:12px; font-weight:400; letter-spacing:1px; display:inline-block; transform: scaleX(1.1) scaleY(0.8); transform-origin:center;">from &nbsp;&nbsp;<user style="display:inline-block; font-size:15px; font-weight:400; transform: scaleX(1.0) scaleY(1.3); color:#4790fb; text-shadow:1px 0 0 currentColor, -0.5px 0 0 currentColor;      font-family: sans-serif;"> <i class="fab fa-gg" style="text-shadow: none;color:#4790fb; transform:scale(1.0); font-weight: 800;"></i>
- Unicreate</user>
+&nbsp; <svg xmlns="http://www.w3.org/2000/svg" fill="#4790fb" width="15" height="15" viewBox="0 0 30 30" style="transform: translateY(5px);"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.201 1.122a1 1 0 0 1 1.332.357l1.307 2.138 2.506.063a1 1 0 0 1 .974.975l.063 2.505 2.139 1.307a1 1 0 0 1 .356 1.332L21.68 12l1.198 2.201a1 1 0 0 1-.357 1.332l-2.138 1.307-.063 2.506a1 1 0 0 1-.974.974l-2.506.063-1.307 2.139a1 1 0 0 1-1.332.356L12 21.68l-2.201 1.198a1 1 0 0 1-1.332-.357L7.16 20.383l-2.506-.063a1 1 0 0 1-.974-.974l-.063-2.506-2.138-1.307a1 1 0 0 1-.357-1.332L2.32 12 1.122 9.799a1 1 0 0 1 .357-1.332L3.617 7.16l.063-2.505a1 1 0 0 1 .974-.975l2.506-.063L8.467 1.48A1 1 0 0 1 9.8 1.122L12 2.32l2.201-1.198zm2.44 9.146a1 1 0 1 0-1.281-1.536l-.067.055a43.003 43.003 0 0 0-4.852 4.74l-1.734-1.734a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.475-.067l.056-.067a41 41 0 0 1 5.25-5.25l.066-.055z"></path></svg></user><p style="margin:3px 0 0 0; line-height:1.2;"><user style="font-size:10px; font-weight:400; display:inline-block; transform: scaleX(1.1) scaleY(0.8); transform-origin:center;">web-tools by tommy v2.7.0
+ </user>
 </div>
 <span style="position:absolute; right:90px; 
-color:#86b6fe;font-size:24px; "><button id="shareBtn" style="font-size:24px; border:none; background:none; color: #888;">
+color:#888;font-size:18px; "><button id="shareBtn" style="font-size:18px; border:none; background:none; color: #888;">
     <i class="fas fa-share-alt"></i></button>&nbsp;
 
   <i class="fas fa-qrcode"></i></span>
-   <button id="darkModeBtn" style="position:absolute;  padding:5px;border:none;border-radius:50px;cursor:pointer;background:#222;color:#0f0; font-size: 11px; right:52px; ">🌙 </button>
+   <button id="darkModeBtn" style="position:absolute;  padding:5px;border:none;border-radius:50px;cursor:pointer;background:#888;color:#0f0; font-size: 8px; right:55px; ">🌙 </button>
 </div>
 
 <script>
@@ -568,11 +591,6 @@ shareBtn.addEventListener('click', async () => {
     }
 });
 </script>
-
-
-
-
-
 
   <!-- BLOK KONTEN -->
   <section id="block-karakter" class="block active" tabindex="0">
@@ -1309,251 +1327,14 @@ footer {
 
 <div class="unique-image-container">
 <div class="verified-name">
-  <span class="name">Create Image
-  <i class="fab fa-earlybirds"></i>
-  &nbsp;
-<foot style="font-size: 12px; color:#444;  font-family: 'Courier New', monospace;
-">
-Design • Tommy V0.1.0 ⋯
-</foot>
-    </div>
-        </div>
-          <p style="font-size: 13px; margin-left: 8px; font-family: Questrial; margin-top:-8px;">
-         Gratis Buat gambar. jika terjadi error stop lanjut lagi setelah pembaruan beberapa saat
-          </p><div style="padding: 10px;">
-          <textarea id="uniquePromptInput" class="unique-prompt-input"
-          style="width: 100%; 
-          height: 20vh;
-          border: 1px solid #4fb4ffe0; border-radius: 5px; font-size: 14px;
-          "
-          placeholder="Tulis deskripsi kreatif Anda di sini..."></textarea>
-          </div><div class="unique-image-container">  <h3 style=" font-size: 15px; color: #777; font-size: 16px; margin-top: -8px; font-family: Questrial;">
-          Image displayed <i style="margin-left: 0px; font-size: 14px; color: #4b9bf4f9;" class="fab fa-slack"></i>
-          </h3><img id="uniqueGeneratedImage" class="unique-generated-image" alt="">
-      <div id="loader" class="loader"></div>
-      <div class="scroll-container"></div>
-          <div id="downloadTextContainer" style="display: none; text-align: center; font-size: 14px; font-weight: bold; color: #333; margin-top: 10px;"></div>
-          
-        <button  id="uniqueSaveBtn" style="display:none; background:rgb(81,85,91); color:#fff; padding:10px; border-radius:5px; border:none; margin-bottom:5px;">Download</button>
 
-          <div><select id="uniqueHeightInput" class="unique-height-input" 
-        style="font-size: 15px; padding: 5px; border-radius: 8px; font-weight: bold; color: #777;">
-        <option value="200">200Px sampul</option>
-        <option value="300">300Px sampul</option>
-        <option value="400">400Px</option>
-        <option value="500">500Px (Persegi)</option>
-        <option value="600">600Px</option>
-        <option value="700">700Px</option>
-        <option value="800">800Px</option>
-      </select>
-
-      <button id="uniqueGenerateBtn" class="unique-generate-btn"
-          style="color: #fff; border: none; border-radius: 8px; font-size: 14px; padding: 8px; cursor: pointer; margin-top: 0px; font-weight: bold; margin-left: 10px; background:#82a6ec;">Generate <i style="margin-left: 5px; font-size: 15px; color: #ffd;" class="fas fa-sync"></i></button></div><div id="preset-images" style="margin-top: 10px;"><h3 style="color: #777; font-size: 15px; margin-bottom: 10px; font-family:Questrial;">
-          Gambar Preset klik untuk buat ⇆ Scrollbar
-          </h3></div><div class="image-slider-container"><div class="image-slider">
-          <img src="https://i.postimg.cc/GmYyyysx/generated-image-png-(2).jpg"
-          alt="Gambar 1" class="slider-image"
-          data-prompt="A logo in white, lime green, and grey on a black background, featuring the word GEMBEL in a distressed, bold font. Below it, in a smaller, sleeker font, are the words ELITE on the left and TM DESIGN on the right. The logo has a dynamic, angular design with geometric shapes and lines radiating from the text, giving it a modern, racing, or sports-oriented feel.">
-          <img src="https://i.postimg.cc/bJXSg0Kv/generated-image-png-(5).jpg"
-          alt="Gambar 1" class="slider-image"
-          data-prompt="Create a bold racing-style typography design featuring the text PEMUDA ERTE 25. Use sharp, angular, italicized lettering with a dynamic and sporty look. Incorporate vibrant colors such as bright blue, neon yellow, and white, outlined with black for strong contrast. Add graphic elements like speedlines, arrows, geometric shapes, and layered stripes to enhance the high-speed racing aesthetic. Use a solid black background to make the colors pop. Overall style should feel modern, energetic, and aggressive, similar to motorcycle decal graphics"><img src="https://i.postimg.cc/LsDKfjT8/download-2-26.jpg" alt="Gambar 4" class="slider-image" data-prompt="A stylish male anime character wearing a black hoodie with the hood up and a black face mask, obscuring most of his face. He has intricate tattoos on both arms and a red beaded necklace with a pendant. He is wearing a black t-shirt with a red tribal design and a black jacket over it, along with black pants with a white drawstring and side pockets. Two fierce white tigers with blue eyes are perched on his shoulders. The background is a neon-lit futuristic city street at night, with glowing Japanese signs.">
-          <img src="https://i.postimg.cc/Gp1KyQn5/download-2-27.jpg" alt="Gambar 5" class="slider-image" data-prompt="A male anime character, resembling Kakashi Hatake, with spiky white hair and a black face mask, holding a white and red Kitsune mask. He wears a white jacket with red accents and intricate red rope details, along with a black headband and black gloves. His outfit includes white pants, and there are additional red and black elements around his waist and arms. The background features chaotic, broken structures with white, gray, and splashes of vibrant red, creating a dynamic, artistic setting.">
-          <img src="https://i.postimg.cc/Qt8MBnCN/download-2-28.jpg" alt="Gambar 5" class="slider-image" data-prompt="A dynamic, vertical, full-body shot of Goku from Dragon Ball in his Ultra Instinct form. His hair glows with an intense white-blue aura. His upper body is muscular, and he wears a tattered blue gi and red wristbands. His body is surrounded by a powerful, multi-colored aura of blue, purple, and red, with glowing particles and streaks of light. His face is serene and focused, with his eyes appearing silver. The background is a dark void with bright blue energy streaks.">
-
-
-          <img src="https://iili.io/2Qc1E0J.png" alt="prompt" class="slider-image" data-prompt="A young man sits on a large blue Facebook logo, wearing a black jacket with a blue hoodie, a white t-shirt and modern sneakers. The background clearly displays the Facebook profile page with visible details such as profile picture, name, icon, and layout. The artistic style is realistic about the man and his background, ensuring the Facebook profile page reads clearly and in detail.">
-          <img src="https://iili.io/2Qcgg7p.png" alt="prompt" class="slider-image" data-prompt="A majestic eagle with detailed golden and bronze feathers, wings fully spread, and a fierce expression. Below the eagle is a luxurious ornamental banner with intricate swirls and floral designs in gold and teal tones. The background is a dark gradient, emphasizing the metallic and elegant details of the artwork. The style is highly detailed and realistic, with a royal and decorative theme.">
-          <img src="https://iili.io/2QcQs19.png" alt="prompt" class="slider-image" data-prompt="A handsome Korean man with sharp facial features, styled black hair, and a confident expression, wearing a sleek black outfit. His back is adorned with a vibrant, highly detailed 3D dragon tattoo in shades of black and red, with lifelike textures and glowing accents. The tattoo appears to almost emerge from his skin, creating a dynamic effect. The background is brightly lit with a modern, urban ambiance, featuring warm, natural lighting and clear details of an evening street scene, ensuring a vibrant and balanced composition with all elements clearly visible.">
-          <img src="https://iili.io/2QcnL8J.png" alt="prompt" class="slider-image" data-prompt="FotoRealistick, A regal and vibrant fantasy-style logo featuring two fierce white tigers with glowing orange eyes, positioned symmetrically around a circular centerpiece. The lions have detailed fur patterns and an intense expression, with golden decorative elements accentuating their elegance. Above the circle, add a golden crown with radiant wings and a central jewel. Surround the design with white floral decorations, vibrant red-and-white ribbons, and luminous pink lightning effects for a dynamic and powerful look. Use a polished gold-and-silver color scheme combined with bright accents to highlight the intricate details, set against a gray background to enhance the contrast.">
-
-          <img src="https://iili.io/2LjendN.png" alt="prompt" class="slider-image" data-prompt="FotoRealistic, Wanita korea cantik wajah menghadap penonton, dengan tubuh mengenakan kostum switer hody bertopi, lengkap Punggungnya dihiasi cangkang siput besar yang, dengan tekstur kerang melingkar. Antena kecil tumbuh di atas topi hody, menambah elemen seperti siput. Karakter ini berjongkok di atas lanskap hutan alien yang dipenuhi lumut hijau, jamur bercahaya, dan tumbuhan eksotis. Latar belakangnya menampilkan pemandangan dengan yang terang serta formasi batuan yang menjulang, menciptakan suasana realistick hd."><img src="https://iili.io/2rBfSKF.png" alt="spider-man" class="slider-image" data-prompt="Create a hyper-realistic image of Spider-Man wearing a futuristic, shiny white robot suit, designed with intricate metallic details and glowing blue accents. He stands confidently in the foreground. Behind him, a large, highly detailed Transformer-like robot sits in a defensive pose, with a reflective metallic coating. The scene is set in a futuristic city at dusk, with warm and cool lighting providing realistic shading of the characters. Make sure textures, proportions and lighting are photorealistic"><img src="https://iili.io/2LW454j.png" alt="prompt" class="slider-image" data-prompt="Foto-realistick, Gambarkan seorang hacker anonymous memegang (playing card joker), di lingkungan komputer teknologi mengalirkan cahaya ">
-          <img src="https://iili.io/2Lx26hl.png" alt="prompt" class="slider-image" data-prompt="beautiful owl with long colorful feathers, perched on a cherry tree, with a snow mountain as a background, a cool view with the light of the wind flowing beautiful neon colors">
-          </div>
-     </div>
-     <p></p>
-          <h style="color: #555; font-family:Questrial; font-size:18px;">Buat gambar dengan klik gambar Preset atau bisa juga ketikan prompt di teks area menurut imajinasimu sendiri</h>
-    <p style="color: white; font-family:Questrial; background:#555; padding:5px; border-radius:8px; font-size:12px;"> Sebagian alat belum berkeja dengan normal masih banyak mengalami error. untuk pembuatan gambar AI kami menggunakan alat dari pollinations AI untuk tahap uji coba dan banyak di gunakan oleh para Developer lain untuk tes uji coba web, namun untuk app rancang desain sendiri dan website masih dalam tahap pengembangan. <br></br> </p>
-<footer>
-  <div class="footer-links">
-    <a href="/privacy">Privasi</a> | 
-    <a href="/policy">Kebijakan Konten</a> | 
-    <a href="/terms">Ketentuan Penggunaan</a> | 
-    <a href="/settings">Pengaturan</a> | 
-    <a href="/feedback">Umpan Balik</a>
-  </div>
-  <p>Design: Tommy App v0.1.0 © 2023</p>
-</footer>
-
-   
-   </div>
-   
-  <script>
-    const cards = document.querySelectorAll('.card');
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const modalPrompt = document.getElementById('modal-prompt');
-    const copyBtn = document.getElementById('copyBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const copySuccess = document.getElementById('copySuccess');
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const img = card.querySelector('img').src;
-        const prompt = card.getAttribute('data-prompt');
-        modalImg.src = img;
-        modalPrompt.textContent = prompt;
-        modal.style.display = 'flex';
-        copySuccess.style.display = 'none';
-      });
-    });
-
-    copyBtn.addEventListener('click', () => {
-      const text = modalPrompt.textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        copySuccess.style.display = 'inline';
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    modal.addEventListener('click', (e) => {
-      if(e.target === modal){
-        modal.style.display = 'none';
-      }
-    });
-  </script>
-
-<script>
-const promptInput = document.getElementById("uniquePromptInput");
-const sliderImages = document.querySelectorAll(".slider-image");
-const generatedImage = document.getElementById("uniqueGeneratedImage");
-const loader = document.getElementById("loader");
-const saveBtn = document.getElementById("uniqueSaveBtn");
-const heightInput = document.getElementById("uniqueHeightInput");
-const generateBtn = document.getElementById("uniqueGenerateBtn");
-
-// =======================
-// GENERATE IMAGE FUNCTION
-// =======================
-function generateImage(description = null) {
-  const prompt = description || promptInput.value.trim();
-  const selected = parseInt(heightInput.value) || 500;
-
-  const width = 500;       // Lebar tetap 500
-  const height = selected; // Tinggi mengikuti input
-
-  if (!prompt) {
-    alert("Please enter a description for the image.");
-    return;
-  }
-
-  // Munculkan animasi loading
-  loader.style.display = 'block';
-  setTimeout(() => {
-    loader.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 50);
-
-  const seed = Math.floor(Math.random() * 1000000);
-  const generateImageUrl =
-    `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?nologo=true&seed=${seed}&width=${width}&height=${height}`;
-
-  generatedImage.src = generateImageUrl;
-
-
-  // =========================
-  // SAAT GAMBAR SUDAH DI LOAD
-  // =========================
-  generatedImage.onload = () => {
-    loader.style.display = 'none';
-
-    // ---- TAMPILKAN TOMBOL DOWNLOAD ----
-    saveBtn.style.display = "block";
-    saveBtn.disabled = false;
-
-    // ---- GAMBAR BISA DIKLIK UNTUK DOWNLOAD ----
-    generatedImage.onclick = saveImage;
-    generatedImage.style.cursor = "pointer";
-
-    // ---- TAMBAH TEKS PETUNJUK ----
-    let downloadText = document.getElementById("downloadText");
-    if (!downloadText) {
-      downloadText = document.createElement("p");
-      downloadText.id = "downloadText";
-      generatedImage.parentNode.insertBefore(downloadText, generatedImage.nextSibling);
-    }
-
-    downloadText.textContent = "Klik gambar atau tombol Download untuk menyimpan";
-    downloadText.style.textAlign = "center";
-    downloadText.style.fontSize = "14px";
-    downloadText.style.fontWeight = "bold";
-    downloadText.style.color = "#333";
-    downloadText.style.marginTop = "-5px";
-    downloadText.style.marginBottom = "10px";
-    downloadText.style.display = "block";
-
-    setTimeout(() => {
-      generatedImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 200);
-  };
-}
-
-
-// =======================
-// DOWNLOAD IMAGE FUNCTION
-// =======================
-function saveImage() {
-  fetch(generatedImage.src, {
-    mode: "cors"
-  })
-    .then(response => response.blob())
-    .then(blob => {
-      const blobUrl = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = blobUrl;
-      link.download = "generated_image.png";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(blobUrl);
-    })
-    .catch(err => {
-      console.error("Download error:", err);
-      alert("Gagal menyimpan gambar. Coba lagi.");
-    });
-}
-
-
-
-// =======================
-// SLIDER IMAGE CLICK EVENT
-// =======================
-sliderImages.forEach(image => {
-  image.addEventListener("click", function () {
-    const prompt = this.getAttribute("data-prompt");
-    promptInput.value = prompt;
-    generateImage(prompt);
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-
-
-// =======================
-// BUTTON EVENTS
-// =======================
-generateBtn.addEventListener("click", () => generateImage());
-saveBtn.addEventListener("click", saveImage);
-</script>
-
-</div>
 </section>
 <section id="block-image" class="block" tabindex="0">
   <div class="container">
 <style>
 #block-image iframe {
   width: 100%;
+  margin-top:-10px;
   height: 100vh;
   border: none;
 }
@@ -1571,9 +1352,7 @@ saveBtn.addEventListener("click", saveImage);
     <button class="nav-btn" data-target="block-glitch">
     <i class="fas fa-keyboard"></i><small>Keyboard</small>
   </button>
-  <button class="nav-btn" data-target="block-emoji">
-    <i class="fas fa-images"></i><small>Create Img</small>
-  </button>
+
   <button class="nav-btn" data-target="block-galeri">
     <i class="fas fa-play"></i><small>Code Run</small>
   </button>
