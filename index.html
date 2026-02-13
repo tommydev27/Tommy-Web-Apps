@@ -84,7 +84,10 @@ background-color: #eaf0f4;
   padding: 3px 20px;
 }
 
-
+body.dark .header-fixed {
+    border-bottom: 1px solid red;
+    background: #222;
+}
 /* BLOK KONTEN */
 section.block {
   padding: ;
@@ -173,7 +176,19 @@ textarea {
 }
 
   
-
+body.dark .nav-wrap,
+body.dark .nav-btn {
+  background: #333;
+  color: #2bfc1b;
+}
+body.dark .nav-btn:hover {
+  color: #9dd1ff;
+  transform: scale(1.05);
+}
+body.dark .nav-btn:active {
+  transform: scale(0.95);
+}
+  
 .nav-btn {
   flex: 1; /* setiap tombol ambil porsi lebar sama */
   display: flex;
@@ -212,6 +227,39 @@ textarea {
 .nav-btn i { display: block; font-size: 20px; }
 .nav-btn small { display: block; font-size: 10px; margin-top: 2px; }
 /* MODE GELAP */
+body.dark {
+  background: #000;
+  color: #00ff00;
+}
+
+body.dark textarea {
+  background: #333;
+  color: #00ff00;
+  border-color: #0f0;
+}
+
+body.dark .container,
+body.dark .stat-box,
+body.dark .item {
+  background: #111;
+  border-color: #0f0;
+  color: #00ff00;
+}
+
+body.dark .tools button {
+  background: linear-gradient(180deg, #333, #002600);
+  color: #00ff00;
+}
+
+body.dark .tools button:hover {
+  background: linear-gradient(180deg, #333, #003000);
+}
+
+body.dark #darkModeBtn {
+  background: #0f0;
+  color: #000;
+}
+
 
 .stats-top {
   display: grid;
@@ -487,19 +535,20 @@ if ('serviceWorker' in navigator) {
   const splash = document.getElementById('splash');
   const mainContent = document.getElementById('main');
 
+  // Cek apakah user sudah melihat splash di sesi ini
   if (sessionStorage.getItem('splashPlayed')) {
     splash.style.display = 'none';
     mainContent.style.display = 'block';
   } else {
-
+    // Jika belum pernah, jalankan animasi
     setTimeout(() => {
       splash.classList.add('fade-out');
       setTimeout(() => {
         splash.style.display = 'none';
         mainContent.style.display = 'block';
-
+        // Simpan status agar tidak muncul lagi saat kembali ke menu
         sessionStorage.setItem('splashPlayed', 'true');
-      }, 800);
+      }, 800); // Sesuaikan dengan durasi transisi fade-out Anda
     }, 3000);
   }
 </script>
@@ -517,11 +566,12 @@ if ('serviceWorker' in navigator) {
 &nbsp; <svg xmlns="http://www.w3.org/2000/svg" fill="#4790fb" width="15" height="15" viewBox="0 0 30 30" style="transform: translateY(5px);"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.201 1.122a1 1 0 0 1 1.332.357l1.307 2.138 2.506.063a1 1 0 0 1 .974.975l.063 2.505 2.139 1.307a1 1 0 0 1 .356 1.332L21.68 12l1.198 2.201a1 1 0 0 1-.357 1.332l-2.138 1.307-.063 2.506a1 1 0 0 1-.974.974l-2.506.063-1.307 2.139a1 1 0 0 1-1.332.356L12 21.68l-2.201 1.198a1 1 0 0 1-1.332-.357L7.16 20.383l-2.506-.063a1 1 0 0 1-.974-.974l-.063-2.506-2.138-1.307a1 1 0 0 1-.357-1.332L2.32 12 1.122 9.799a1 1 0 0 1 .357-1.332L3.617 7.16l.063-2.505a1 1 0 0 1 .974-.975l2.506-.063L8.467 1.48A1 1 0 0 1 9.8 1.122L12 2.32l2.201-1.198zm2.44 9.146a1 1 0 1 0-1.281-1.536l-.067.055a43.003 43.003 0 0 0-4.852 4.74l-1.734-1.734a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.475-.067l.056-.067a41 41 0 0 1 5.25-5.25l.066-.055z"></path></svg></user><p style="margin:3px 0 0 0; line-height:1.2;"><user style="font-size:10px; font-weight:400; display:inline-block; transform: scaleX(1.1) scaleY(0.8); transform-origin:center;">web-tools by tommy v2.7.0
  </user>
 </div>
-<span style="position:absolute; right:60px; 
+<span style="position:absolute; right:90px; 
 color:#888;font-size:18px; "><button id="shareBtn" style="font-size:18px; border:none; background:none; color: #888;">
     <i class="fas fa-share-alt"></i></button>&nbsp;
 
   <i class="fas fa-qrcode"></i></span>
+   <button id="darkModeBtn" style="position:absolute;  padding:5px;border:none;border-radius:50px;cursor:pointer;background:#888;color:#0f0; font-size: 8px; right:55px; ">🌙 </button>
 </div>
 
 <script>
@@ -697,6 +747,9 @@ function pulse(btn) {
       });
     }
     
+    document.getElementById("darkModeBtn").addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
 
 document.getElementById("unicodeBadge").addEventListener("click", () => {
   window.open("https://tommydev27.github.io/unicode-explorerTM/", "_blank");
