@@ -532,7 +532,7 @@ shareBtn.addEventListener('click', async () => {
         try {
             await navigator.share({
                 title: 'app by tommy v.27 ©', // Judul yang muncul saat di-share
-                url: 'https://tommydev27.github.io/tommy-web-app/' // Link spesifik Anda
+                url: 'https://bit.ly/tommy-web' // Link spesifik Anda
             });
             console.log('Berhasil dibagikan');
         } catch (err) {
@@ -540,7 +540,7 @@ shareBtn.addEventListener('click', async () => {
         }
     } else {
         // Fallback jika browser tidak mendukung navigator.share
-        alert('Fitur bagikan tidak didukung. Copy link ini: https://tommydev27.github.io/tommy-web-app/');
+        alert('https://bit.ly/tommy-web');
     }
 });
 </script>
